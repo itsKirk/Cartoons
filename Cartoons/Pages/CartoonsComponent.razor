@@ -1,0 +1,22 @@
+﻿@page "/cartoons"
+<PageTitle>Cartoons</PageTitle>
+@if (_cartoons == null)
+{
+    <em>Loading...</em>
+}
+else
+{
+    <div class="row" style="width:400px;">
+        @foreach (var cartoon in _cartoons)
+        {
+            <div class="card m-1">
+                <div class="card-body">
+                    <h4 class="card-title">@cartoon.title</h4>
+                    <img src="@cartoon.image" alt="@cartoon.title" height="300" width="300" />
+                    <a href="https://yts.mx/" target="blank">Watch</a>
+                </div>
+            </div>
+        }
+    </div>
+}
+
